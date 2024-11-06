@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccueilController!{% endblock %}
+
+{% block body %}
+
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+
+
+
+
+
+ {{ form_start(form) }}
+    <div class="container mt-4">
+        <h2>Ajouter une dépense</h2>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                {{ form_row(form.prix, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_row(form.date, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                {{ form_row(form.description, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                {{ form_row(form.type, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Valider</button>
+        </div>
+    </div>
+
+    
+    {{ form_end(form) }}
+{# <center><h1> Les dépenses : </h1></center>
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Type_Id</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Date</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for depense in depenses %}
+    <tr>
+      <th scope="row">{{ depense.id }}</th>
+      <td>{{ depense.type.libelle }}</td>
+      <td>{{ depense.prix }}</td>
+      <td>{{ depense.date|date('d/m/Y') }}</td>
+      <td>{{ depense.description }}</td>
+    {% endfor %}
+  </tbody>
+</table>
+
+</div> #}
+
+{% endblock %}

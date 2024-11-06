@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+    <div class="container">
+        <h2>resultat</h2>
+        <div>
+            <h5 class="card-title">total : {{ sommes }} €</h5>
+        </div>
+
+        <div class="container mt-4">
+            <div class="row">
+                {%for depense in depenses %}
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="card  mt-3">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ depense.type.libelle }} - {{ depense.prix }}€</h5>
+                                <p class="card-text">{{ depense.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {%endfor %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
